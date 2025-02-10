@@ -153,12 +153,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['delete_id'])) {
   #announcement-page .announcement-item h6 {
     color: var(--primary-color);
     font-weight: 500;
+    margin: none;
+    padding: none;
   }
   #announcement-page .announcement-item small {
     color: #666;
   }
   #announcemet-pag .announcement-item p.mt-3 {
-    margin-left: 10px;
+    margin-left: 45px;
   }
   /* Toast Container */
   #announcement-page .toast-container {
