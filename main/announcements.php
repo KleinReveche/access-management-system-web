@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['delete_id'])) {
     gap: 10px;
   }
   #announcement-page .card-header.primary {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
   #announcement-page .card-header.secondary {
     background-color: var(--secondary-color);
@@ -122,12 +122,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['delete_id'])) {
     transition: background-color 0.3s ease;
   }
   #announcement-page .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 12px 30px;
   }
   #announcement-page .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
   }
   #announcement-page .btn-danger {
     background-color: var(--danger-color);
@@ -221,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['delete_id'])) {
         ?>
         <div class="announcement-item">
           <div class="d-flex align-items-center">
-            <i class="bi bi-person-circle me-3" style="font-size: 1.75rem; color: var(--primary-color);"></i>
+            <i class="bi bi-person-circle me-3" style="font-size: 1.75rem; color: var(--secondary-color);"></i>
             <div class="flex-grow-1">
               <h6><?= htmlspecialchars($row['title']); ?></h6>
               <small>
