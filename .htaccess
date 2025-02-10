@@ -1,0 +1,12 @@
+php_value date.timezone 'Asia/Manila'
+
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^\s]+?)\.php[\s?] [NC]
+RewriteRule ^([^\s]+?)\.php$ /%1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]

@@ -1,0 +1,43 @@
+2025-02-07 17:26:10 | emman | EDIT CATEGORY | Updated category id '21' to 'test for logging'.
+2025-02-07 17:33:15 | emman | ADD CATEGORY | Added category 'dummy'.
+2025-02-07 17:33:20 | emman | ADD CATEGORY | Added category 'dummy'.
+2025-02-07 17:33:27 | emman | ADD CATEGORY | Added category 'test'.
+2025-02-07 17:33:49 | emman | EDIT CATEGORY | Updated category id '26' to 'testssss'.
+2025-02-07 17:33:51 | emman | DELETE CATEGORY | Soft-deleted category id '25'.
+2025-02-07 17:33:56 | emman | DELETE CATEGORY | Soft-deleted category id '24'.
+2025-02-07 17:44:33 | emman | ADD CATEGORY | Added category 'time check'.
+2025-02-07 17:44:42 | emman | EDIT CATEGORY | Updated category id '27' to 'time checks'.
+2025-02-07 17:44:45 | emman | DELETE CATEGORY | Soft-deleted category id '27'.
+2025-02-07 18:08:57 | admin | ADD CATEGORY | Added category 'TEst'.
+2025-02-07 19:20:16 | admin | EDIT CATEGORY | Updated category id '26' to 'edited'.
+2025-02-07 19:20:21 | admin | DELETE CATEGORY | Soft-deleted category id '26'.
+2025-02-07 19:21:23 | admin | ADD CATEGORY | Added category 'Hatdog Meals'.
+2025-02-07 20:35:28 | emman | ADD CATEGORY | Added category 'BestSMM PH'.
+2025-02-07 20:35:53 | admin | ADD CATEGORY | Added category '123123'.
+2025-02-07 20:37:24 | emman | ADD CATEGORY | Added category 'BestSMM PH'.
+2025-02-07 20:37:31 | emman | ADD CATEGORY | Added category 'test1'.
+2025-02-07 20:37:42 | emman | ADD CATEGORY | Added category 'trtertyuety'.
+2025-02-07 20:37:58 | emman | DELETE CATEGORY | Soft-deleted category id '33'.
+2025-02-07 20:38:09 | emman | DELETE CATEGORY | Soft-deleted category id '31'.
+2025-02-07 20:38:14 | emman | ADD CATEGORY | Added category 'jack pineda'.
+2025-02-07 20:38:49 | emman | ADD CATEGORY | Added category 'jack pineda'.
+2025-02-07 20:38:53 | emman | ADD CATEGORY | Added category 'try'.
+2025-02-07 20:38:57 | emman | ADD CATEGORY | Added category 'try'.
+2025-02-07 20:39:01 | emman | ADD CATEGORY | Added category 'try'.
+2025-02-07 20:39:17 | admin | ADD CATEGORY | Added category 'ssssample'.
+2025-02-07 20:40:37 | admin | ADD CATEGORY | Added category 'nitro'.
+2025-02-07 20:45:48 | emman | ADD CATEGORY | Added category 'try'.
+2025-02-07 20:46:22 | admin | ADD CATEGORY | Added category 'oaoaw'.
+2025-02-07 20:47:44 | admin | ADD CATEGORY | Added category 'nani'.
+2025-02-07 20:48:15 | emman | ADD CATEGORY | Added category 'try'.
+2025-02-07 20:55:10 | admin | ADD CATEGORY | Added category 'qweqweqwe'.
+2025-02-07 21:05:37 | admin | ADD CATEGORY | Added category 'asdasdas'.
+2025-02-07 21:06:23 | admin | ADD CATEGORY | Added category 'yuiyuiyui'.
+2025-02-07 21:27:43 | emman | ADD CATEGORY | Added category '99999999999'.
+2025-02-07 21:27:56 | emman | DELETE CATEGORY | Soft-deleted category id '48'.
+2025-02-07 21:28:02 | emman | DELETE CATEGORY | Soft-deleted category id '47'.
+2025-02-07 21:28:08 | emman | DELETE CATEGORY | Soft-deleted category id '46'.
+2025-02-07 21:28:14 | emman | DELETE CATEGORY | Soft-deleted category id '45'.
+2025-02-07 21:28:28 | emman | DELETE CATEGORY | Soft-deleted category id '44'.
+2025-02-07 21:29:54 | emman | DELETE CATEGORY | Soft-deleted category id '43'.
+2025-02-10 11:14:29 | admin | DELETE CATEGORY | Soft-deleted category id '29'.

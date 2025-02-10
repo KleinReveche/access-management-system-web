@@ -1,0 +1,30 @@
+2025-02-07 17:22:29 | emman | ADD USER | Added user 'jack' with role 'Cashier'.
+2025-02-07 17:23:13 | emman | EDIT USER | Updated user id '34' to username 'jack' with role 'Staff'.
+2025-02-07 17:23:17 | emman | DELETE USER | Deleted user 'jack' (id: 34).
+2025-02-07 17:29:12 | emman | ADD USER | Added user 'kalbo' with role 'Cashier'.
+2025-02-07 17:56:36 | emman | ADD USER | Added user 'admin' with role 'Admin'.
+2025-02-07 18:10:58 | emman | ADD USER | Added user 'admin' with role 'Admin'.
+2025-02-07 18:30:44 | admin | ADD USER | Added user 'hello world' with role 'Cashier'.
+2025-02-07 20:49:19 | emman | ADD USER | Added user 'testing' with role 'Cashier'.
+2025-02-07 20:49:28 | emman | ADD USER | Added user 'testing' with role 'Cashier'.
+2025-02-07 20:49:59 | emman | ADD USER | Added user 'burnek' with role 'Cashier'.
+2025-02-07 20:50:08 | admin | ADD USER | Added user 'sssample' with role 'Cashier'.
+2025-02-07 20:50:08 | emman | ADD USER | Added user 'burnek' with role 'Cashier'.
+2025-02-07 20:52:48 | admin | ADD USER | Added user 'asdasdasd' with role 'Cashier'.
+2025-02-07 20:54:23 | admin | ADD USER | Added user 'asadasd' with role 'Cashier'.
+2025-02-07 20:57:48 | admin | ADD USER | Added user 'qweqwe' with role 'Cashier'.
+2025-02-07 20:59:14 | admin | ADD USER | Added user 'qweqwe' with role 'Cashier'.
+2025-02-07 21:02:13 | admin | ADD USER | Added user 'qweqeqweqw' with role 'Cashier'.
+2025-02-07 21:04:12 | admin | ADD USER | Added user 'qweqwe' with role 'Cashier'.
+2025-02-07 21:04:48 | admin | ADD USER | Added user 'qweqweqweqwe' with role 'Cashier'.
+2025-02-07 21:07:19 | admin | ADD USER | Added user 'qwetyuui' with role 'Cashier'.
+2025-02-07 21:27:18 | emman | ADD USER | Added user 'KUYUKOT' with role 'Admin'.
+2025-02-09 17:03:53 | emman | ADD USER | Added user 'jack' with role 'Cashier'.
+2025-02-09 17:04:35 | emman | EDIT USER | Updated user id '54' to username 'jack' with role 'Cashier'.
+2025-02-09 17:04:37 | emman | EDIT USER | Updated user id '54' to username 'jack' with role 'Cashier'.
+2025-02-09 17:04:55 | emman | ADD USER | Added user 'jack' with role 'Cashier'.
+2025-02-09 17:05:28 | emman | EDIT USER | Updated user id '54' to username 'jack' with role 'Admin'.
+2025-02-09 17:05:39 | emman | ADD USER | Added user 'admin' with role 'Admin'.
+2025-02-09 19:29:17 | emman | ADD USER | Added user 'haha' with role 'Admin'.
+2025-02-09 19:29:21 | admin | ADD USER | Added user 'test' with role 'Cashier'.
+2025-02-09 19:33:17 | emman | EDIT USER | Updated user id '2' to username 'emman' with role 'Cashier'.

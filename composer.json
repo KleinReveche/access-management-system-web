@@ -1,0 +1,6 @@
+{
+    "require": {
+        "pusher/pusher-php-server": "^7.2",
+        "tecnickcom/tcpdf": "^6.8"
+    }
+}
