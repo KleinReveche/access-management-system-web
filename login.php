@@ -317,7 +317,7 @@ unset($_SESSION['error']);
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('main/uploads/bg image.jpg') no-repeat center center fixed;
+            background: url('main/uploads/ws/bg_image.jpg') no-repeat center center fixed;
             background-size: cover;
             filter: blur(8px);
             z-index: 0;
