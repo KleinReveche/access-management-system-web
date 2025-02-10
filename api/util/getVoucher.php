@@ -25,7 +25,7 @@ function getVoucher(string $voucher): string
             RequestType::VOUCHER,
             ResponseType::SUCCESS,
             json_encode([
-                "voucher_code" => generateVoucherCode(),
+                "voucherCode" => generateVoucherCode(),
                 "description" => "This includes a n% discount on all products."
             ])
         ))->toJson();
