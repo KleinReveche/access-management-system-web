@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     margin: 0;
                     padding: 0;
                     background-color: #120E47;
-                    background: url('main/uploads/ws/bg image.jpg') no-repeat center center fixed;
+                    background: url('main/uploads/ws/bg_image.jpg') no-repeat center center fixed;
                     background-size: cover;
                     font-family: sans-serif;
                     display: flex;
