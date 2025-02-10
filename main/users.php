@@ -207,9 +207,9 @@ ob_flush();
       <i class="fas fa-user-cog me-2"></i>Manage Users
     </h1>
     <div class="role-guide">
-      <span class="badge" style="background-color: #007ba7; color: white;">Admin</span>
-      <span class="badge" style="background-color: #355e3b; color: white;">Cashier</span>
-      <span class="badge" style="background-color: #a0522d; color: white;">Staff</span>
+      <span class="badge" style="background-color: rgba(1, 61, 83, 0.8);  color: white;">Admin</span>
+      <span class="badge" style="background-color: rgba(53, 94, 59, 0.9); color: white;">Cashier</span>
+      <span class="badge" style="background-color: rgba(160, 81, 45, 0.8);color: white;">Staff</span>
     </div>
     <button class="btn btn-primary users-btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
       <i class="fas fa-plus"></i> Add User
@@ -238,7 +238,7 @@ ob_flush();
             $roleClass = 'style="background-color:rgba(1, 61, 83, 0.8); color: white;"';
             break;
           case 'Cashier':
-            $roleClass = 'style="background-color:rgba(53, 94, 59, 0.8); color: white;"';
+            $roleClass = 'style="background-color:rgba(53, 94, 59, 0.9); color: white;"';
             break;
           case 'Staff':
             $roleClass = 'style="background-color:rgba(160, 81, 45, 0.8); color: white;"';
