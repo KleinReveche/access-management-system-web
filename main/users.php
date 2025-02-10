@@ -238,10 +238,10 @@ ob_flush();
             $roleClass = 'style="background-color:rgba(1, 61, 83, 0.8); color: white;"';
             break;
           case 'Cashier':
-            $roleClass = 'style="background-color:rgba(53, 94, 59, 0.9); color: white;"';
+            $roleClass = 'style="background-color:green; color: white;"';
             break;
           case 'Staff':
-            $roleClass = 'style="background-color:rgba(160, 81, 45, 0.8); color: white;"';
+            $roleClass = 'style="background-color:red; color: white;"';
             break;
         }
       ?>
