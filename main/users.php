@@ -230,18 +230,18 @@ ob_flush();
         $roleClass = '';
         switch ($user['role']) {
           case 'Admin':
-            $roleClass = 'bg-primary text-white';
+            $roleClass = 'style="background-color: #007ba; color: white;"';
             break;
           case 'Cashier':
-            $roleClass = 'bg-success text-white';
+            $roleClass = 'style="background-color: #355e3b; color: white;"';
             break;
           case 'Staff':
-            $roleClass = 'bg-warning text-dark';
+            $roleClass = 'style="background-color: #a0522d; color: white;"';
             break;
         }
       ?>
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card users-user-card <?php echo $roleClass; ?>">
+        <div class="card users-user-card" <?php echo $roleClass; ?>>
           <div class="card-body">
             <h5 class="card-title text-center"> <?php echo htmlspecialchars($user['username']); ?> </h5>
             <p class="card-text"><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
@@ -271,6 +271,7 @@ ob_flush();
   </div>
 </div>
 <!-- End of Main Content Container -->
+
 
 
 <!-- Modals -->
