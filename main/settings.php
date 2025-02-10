@@ -196,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_password'])) {
       <h2>Username/Password Update</h2>
       <form method="POST">
         <div class="form-group">
-          <label for="new_username">New Username</label>
+          <label for="new_username">Edit Username</label>
           <input type="text" name="new_username" id="new_username"
             value="<?php echo htmlspecialchars($_SESSION['admin_username']); ?>" required>
         </div>
