@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_password'])) {
     $new_username = $_POST['new_username'];
 
     // Fetch current password and username from database
-    $stmt = $pdo->prepare("SELECT * FROM admin WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute(['username' => $_SESSION['admin_username']]);
     $admin = $stmt->fetch();
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_password'])) {
             $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
             try {
                 // Update username and password
-                $stmt = $pdo->prepare("UPDATE admin SET username = :username, password = :password WHERE username = :current_username");
+                $stmt = $pdo->prepare("UPDATE users SET username = :username, password = :password WHERE username = :current_username");
                 $stmt->execute([
                     'username' => $new_username, 
                     'password' => $hashed_password, 
