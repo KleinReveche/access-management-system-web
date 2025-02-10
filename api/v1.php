@@ -8,6 +8,7 @@ require 'util/getProducts.php';
 require 'util/getProductCategories.php';
 require 'util/getPublicKey.php';
 require 'util/getRole.php';
+require 'util/getVoucher.php';
 require 'util/loginApi.php';
 require 'util/logoutApi.php';
 require '../util/login.php';
@@ -50,11 +51,7 @@ function process_request(?string $request, ?string $data): void
                 ResponseType::SUCCESS,
                 'Hello, World!'
             ))->toJson(),
-            RequestType::VOUCHER->name => (new JsonResponse(
-                RequestType::VOUCHER,
-                ResponseType::ERROR,
-                'Voucher not found.'
-            ))->toJson(),
+            RequestType::VOUCHER->name => getVoucher($data),
             RequestType::LOGIN->name => loginApi($data),
             RequestType::LOGOUT->name => logoutApi($data),
             RequestType::GET_PUBLIC_KEY->name => getPublicKey($loginToken),

@@ -4,8 +4,6 @@ use api\models\JsonResponse;
 use api\models\RequestType;
 use api\models\ResponseType;
 
-require 'util/decrypt.php';
-
 // loginData has an encrypted json object that expects the following structure:
 // { "username": "username", "password": "password" }
 function loginApi(string $encodedLoginData): string {
@@ -31,4 +29,14 @@ function loginApi(string $encodedLoginData): string {
     }
 
     return $response->toJson();
+}
+
+function urlB64Decode($input): bool|string
+{
+    $remainder = strlen($input) % 4;
+    if ($remainder) {
+        $pad_len = 4 - $remainder;
+        $input .= str_repeat('=', $pad_len);
+    }
+    return base64_decode(strtr($input, '-_', '+/'));
 }
