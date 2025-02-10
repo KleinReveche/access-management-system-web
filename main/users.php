@@ -206,6 +206,11 @@ ob_flush();
     <h1 class="h4 mb-0">
       <i class="fas fa-user-cog me-2"></i>Manage Users
     </h1>
+    <div class="role-guide">
+      <span class="badge" style="background-color: rgb(1, 61, 83); color: white;">Admin</span>
+      <span class="badge" style="background-color: #355e3b; color: white;">Cashier</span>
+      <span class="badge" style="background-color: #a0522d; color: white;">Staff</span>
+    </div>
     <button class="btn btn-primary users-btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
       <i class="fas fa-plus"></i> Add User
     </button>
