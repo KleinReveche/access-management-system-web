@@ -201,8 +201,9 @@ ob_flush();
 
 <!-- Main Content Container -->
 <div class="container mt-5 users-main-container">
+  
   <!-- Header -->
-  <header class="users-header">
+  <header class="d-flex justify-content-between align-items-center users-header">
     <h1 class="h4 mb-0">
       <i class="fas fa-user-cog me-2"></i>Manage Users
     </h1>
@@ -210,52 +211,47 @@ ob_flush();
       <i class="fas fa-plus"></i> Add User
     </button>
   </header>
-
-  <!-- Toast Message Container -->
-  <?php if (isset($success_message)) { ?>
-    <div class="toast users-toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          <?php echo $success_message; ?>
+  
+  <!-- Toast Messages -->
+  <?php if (isset($success_message) || isset($error_message)) { ?>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <?php if (isset($success_message)) { ?>
+        <div class="toast users-toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body"> <?php echo $success_message; ?> </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
         </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
+      <?php } ?>
+      <?php if (isset($error_message)) { ?>
+        <div class="toast users-toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body"> <?php echo $error_message; ?> </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+      <?php } ?>
     </div>
   <?php } ?>
-  <?php if (isset($error_message)) { ?>
-    <div class="toast users-toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          <?php echo $error_message; ?>
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-    </div>
-  <?php } ?>
-
+  
   <!-- Users Grid -->
   <div class="row">
     <?php foreach ($users as $user): ?>
       <div class="col-md-4 mb-4">
-        <div class="users-user-card">
+        <div class="card users-user-card p-3">
           <h4><?php echo htmlspecialchars($user['username']); ?></h4>
           <p><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
           <p><strong>Created By:</strong> <?php echo htmlspecialchars($user['created_by']); ?></p>
-          <p><strong>Created At:</strong>
-            <?php
-              $dt = new DateTime($user['created_at'], new DateTimeZone('UTC'));
-              $dt->setTimezone(new DateTimeZone('Asia/Manila'));
-              echo $dt->format('Y-m-d h:i:s A');
-            ?>
-          </p>
+          <p><strong>Created At:</strong> <?php echo (new DateTime($user['created_at'], new DateTimeZone('UTC')))->setTimezone(new DateTimeZone('Asia/Manila'))->format('Y-m-d h:i:s A'); ?></p>
+          
           <div class="d-flex gap-2 mt-2">
             <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
               <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
-              <button type="submit" name="delete_user" class="btn btn-danger btn-sm users-btn-danger">
+              <button type="submit" name="delete_user" class="btn btn-danger btn-sm">
                 <i class="fas fa-trash"></i> Delete
               </button>
             </form>
-            <button class="btn btn-secondary btn-sm users-btn-secondary" onclick="openEditModal('<?php echo htmlspecialchars($user['id']); ?>')">
+            <button class="btn btn-secondary btn-sm" onclick="openEditModal('<?php echo htmlspecialchars($user['id']); ?>')">
               <i class="fas fa-edit"></i> Edit
             </button>
           </div>
@@ -264,134 +260,13 @@ ob_flush();
     <?php endforeach; ?>
   </div>
 </div>
-<!-- End of Main Content Container -->
 
 <!-- Modals -->
-
-<!-- Add User Modal -->
-<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form method="POST">
-        <div class="modal-header users-modal-header">
-          <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="add-username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="add-username" name="username" required>
-          </div>
-          <div class="mb-3 position-relative">
-            <label for="add-password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="add-password" name="password" required>
-            <i class="fas fa-eye position-absolute" style="top: 38px; right: 15px; cursor:pointer;" id="toggleAddPassword"></i>
-          </div>
-          <div class="mb-3">
-            <label for="add-role" class="form-label">Role</label>
-            <select class="form-select" id="add-role" name="role" required>
-              <option value="Cashier">Cashier</option>
-              <option value="Staff">Staff</option>
-              <option value="Admin">Admin</option>
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" name="add_user" class="btn btn-primary users-btn-primary">Add User</button>
-          <button type="button" class="btn btn-secondary users-btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Edit User Modal -->
-<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form method="POST">
-        <div class="modal-header users-modal-header">
-          <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <input type="hidden" id="edit-id" name="id">
-          <div class="mb-3">
-            <label for="edit-username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="edit-username" name="username" required>
-          </div>
-          <div class="mb-3 position-relative">
-            <label for="edit-password" class="form-label">Password (leave blank to keep current)</label>
-            <input type="password" class="form-control" id="edit-password" name="password">
-            <i class="fas fa-eye position-absolute" style="top: 38px; right: 15px; cursor:pointer;" id="toggleEditPassword"></i>
-          </div>
-          <div class="mb-3">
-            <label for="edit-role" class="form-label">Role</label>
-            <select class="form-select" id="edit-role" name="role" required>
-              <option value="Cashier">Cashier</option>
-              <option value="Staff">Staff</option>
-              <option value="Admin">Admin</option>
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" name="edit_user" class="btn btn-primary users-btn-primary">Save Changes</button>
-          <button type="button" class="btn btn-secondary users-btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
+<?php include('modals.php'); ?>
 <?php include('../includes/footer.php'); ?>
 
-<!-- Include Bootstrap JS and jQuery -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="scripts/user-management.js"></script>
 
-<script>
-  // Toggle password visibility for Add User Modal
-  $('#toggleAddPassword').on('click', function() {
-    var input = $('#add-password');
-    if (input.attr('type') === 'password') {
-      input.attr('type', 'text');
-      $(this).removeClass('fa-eye').addClass('fa-eye-slash');
-    } else {
-      input.attr('type', 'password');
-      $(this).removeClass('fa-eye-slash').addClass('fa-eye');
-    }
-  });
-
-  // Toggle password visibility for Edit User Modal
-  $('#toggleEditPassword').on('click', function() {
-    var input = $('#edit-password');
-    if (input.attr('type') === 'password') {
-      input.attr('type', 'text');
-      $(this).removeClass('fa-eye').addClass('fa-eye-slash');
-    } else {
-      input.attr('type', 'password');
-      $(this).removeClass('fa-eye-slash').addClass('fa-eye');
-    }
-  });
-
-  // Function to open the Edit User Modal and populate fields
-  function openEditModal(userId) {
-    var users = <?php echo json_encode($users); ?>;
-    // Find the user (using non-strict comparison for id)
-    var user = users.find(u => u.id == userId);
-    if (user) {
-      $('#edit-id').val(user.id);
-      $('#edit-username').val(user.username);
-      $('#edit-role').val(user.role);
-      $('#edit-password').val('');
-      var editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
-      editModal.show();
-    }
-  }
-
-  // Initialize and show toast messages (if any)
-  var toastElList = [].slice.call(document.querySelectorAll('.users-toast'));
-  var toastList = toastElList.map(function(toastEl) {
-    return new bootstrap.Toast(toastEl, { delay: 3000 }).show();
-  });
-</script>
