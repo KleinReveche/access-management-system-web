@@ -235,13 +235,13 @@ ob_flush();
         $roleClass = '';
         switch ($user['role']) {
           case 'Admin':
-            $roleClass = 'style="background-color:rgba(1, 61, 83, 0.49); color: white;"';
+            $roleClass = 'style="background-color:rgba(1, 61, 83, 0.8); color: white;"';
             break;
           case 'Cashier':
-            $roleClass = 'style="background-color:rgba(53, 94, 59, 0.49); color: white;"';
+            $roleClass = 'style="background-color:rgba(53, 94, 59, 0.8); color: white;"';
             break;
           case 'Staff':
-            $roleClass = 'style="background-color:rgba(160, 81, 45, 0.51); color: white;"';
+            $roleClass = 'style="background-color:rgba(160, 81, 45, 0.8); color: white;"';
             break;
         }
       ?>
