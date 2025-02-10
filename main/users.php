@@ -230,7 +230,7 @@ ob_flush();
         $roleClass = '';
         switch ($user['role']) {
           case 'Admin':
-            $roleClass = 'style="background-color: #007ba; color: white;"';
+            $roleClass = 'style="background-color:rgb(1, 61, 83); color: white;"';
             break;
           case 'Cashier':
             $roleClass = 'style="background-color: #355e3b; color: white;"';
