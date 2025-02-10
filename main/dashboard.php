@@ -135,11 +135,6 @@ for ($i = 0; $i < 24; $i++) {
     margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
-    transition: transform 0.2s;
-  }
-  .card:hover {
-    transform: scale(1.03);
-    cursor: pointer;
   }
   .card-header {
     background-color: var(--primary-color);
@@ -317,56 +312,10 @@ for ($i = 0; $i < 24; $i++) {
 </div>
 <!-- End of Main Content Container -->
 
-<!-- Additional functionality: Card hover effect -->
-<script>
-  $(document).ready(function() {
-    $('.card').hover(function() {
-      $(this).addClass('shadow-lg').css('cursor', 'pointer');
-    }, function() {
-      $(this).removeClass('shadow-lg');
-    });
-  });
-</script>
-
-<!-- New Section: Recent Transactions -->
-<div class="container mt-5">
-  <div class="card">
-    <div class="card-header bg-info text-white">
-      <h5 class="mb-0"><i class="fas fa-receipt me-2"></i>Recent Transactions</h5>
-    </div>
-    <div class="card-body">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Amount (₱)</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          // Assuming a "transactions" table exists
-          $stmt_recent = $pdo->prepare("SELECT * FROM transactions ORDER BY transaction_date DESC LIMIT 5");
-          $stmt_recent->execute();
-          while ($row = $stmt_recent->fetch(PDO::FETCH_ASSOC)) {
-              echo "<tr>"
-                 . "<td>" . date('Y-m-d', strtotime($row['transaction_date'])) . "</td>"
-                 . "<td>" . htmlspecialchars($row['description']) . "</td>"
-                 . "<td>₱" . number_format($row['amount'], 2) . "</td>"
-                 . "<td>" . ucfirst($row['status']) . "</td>"
-                 . "</tr>";
-          }
-          ?>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<?php include('../includes/footer.php'); ?>
-
 <!-- Include necessary JS libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<?php include('../includes/footer.php'); ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Include Chart.js Library -->
@@ -404,6 +353,7 @@ for ($i = 0; $i < 24; $i++) {
   });
 
   // Profit Over Time Chart (Hourly)
+  // The chart now uses the base color (#120E47) for the line
   var profitOverTimeCtx = document.getElementById('profitOverTimeChart').getContext('2d');
   var profitOverTimeChart = new Chart(profitOverTimeCtx, {
       type: 'line',
