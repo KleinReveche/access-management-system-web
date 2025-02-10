@@ -201,72 +201,63 @@ ob_flush();
 
 <!-- Main Content Container -->
 <div class="container mt-5 users-main-container">
-  
-  <!-- Header -->
-  <header class="d-flex justify-content-between align-items-center users-header">
+  <!-- Header Section -->
+  <header class="d-flex justify-content-between align-items-center mb-4 p-3 bg-light rounded shadow-sm">
     <h1 class="h4 mb-0">
-      <i class="fas fa-user-cog me-2"></i>Manage Users
+      <i class="fas fa-user-cog me-2"></i> Manage Users
     </h1>
-    <button class="btn btn-primary users-btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
       <i class="fas fa-plus"></i> Add User
     </button>
   </header>
-  
+
   <!-- Toast Messages -->
-  <?php if (isset($success_message) || isset($error_message)) { ?>
-    <div class="toast-container position-fixed top-0 end-0 p-3">
-      <?php if (isset($success_message)) { ?>
-        <div class="toast users-toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="d-flex">
-            <div class="toast-body"> <?php echo $success_message; ?> </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-          </div>
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+    <?php if (isset($success_message)) { ?>
+      <div class="toast show align-items-center text-white bg-success border-0" role="alert">
+        <div class="d-flex">
+          <div class="toast-body"> <?php echo $success_message; ?> </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
         </div>
-      <?php } ?>
-      <?php if (isset($error_message)) { ?>
-        <div class="toast users-toast bg-danger text-white" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="d-flex">
-            <div class="toast-body"> <?php echo $error_message; ?> </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-          </div>
+      </div>
+    <?php } ?>
+    <?php if (isset($error_message)) { ?>
+      <div class="toast show align-items-center text-white bg-danger border-0" role="alert">
+        <div class="d-flex">
+          <div class="toast-body"> <?php echo $error_message; ?> </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
         </div>
-      <?php } ?>
-    </div>
-  <?php } ?>
-  
+      </div>
+    <?php } ?>
+  </div>
+
   <!-- Users Grid -->
-  <div class="row">
+  <div class="row g-4">
     <?php foreach ($users as $user): ?>
-      <div class="col-md-4 mb-4">
-        <div class="card users-user-card p-3">
-          <h4><?php echo htmlspecialchars($user['username']); ?></h4>
-          <p><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
-          <p><strong>Created By:</strong> <?php echo htmlspecialchars($user['created_by']); ?></p>
-          <p><strong>Created At:</strong> <?php echo (new DateTime($user['created_at'], new DateTimeZone('UTC')))->setTimezone(new DateTimeZone('Asia/Manila'))->format('Y-m-d h:i:s A'); ?></p>
-          
-          <div class="d-flex gap-2 mt-2">
-            <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
-              <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
-              <button type="submit" name="delete_user" class="btn btn-danger btn-sm">
-                <i class="fas fa-trash"></i> Delete
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title text-primary"> <?php echo htmlspecialchars($user['username']); ?> </h5>
+            <p class="card-text"> <strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?> </p>
+            <p class="text-muted small"> Created By: <?php echo htmlspecialchars($user['created_by']); ?> </p>
+            <p class="text-muted small">
+              Created At: <?php echo (new DateTime($user['created_at'], new DateTimeZone('UTC')))->setTimezone(new DateTimeZone('Asia/Manila'))->format('Y-m-d h:i:s A'); ?>
+            </p>
+            <div class="d-flex justify-content-center gap-2">
+              <button class="btn btn-sm btn-secondary" onclick="openEditModal('<?php echo htmlspecialchars($user['id']); ?>')">
+                <i class="fas fa-edit"></i> Edit
               </button>
-            </form>
-            <button class="btn btn-secondary btn-sm" onclick="openEditModal('<?php echo htmlspecialchars($user['id']); ?>')">
-              <i class="fas fa-edit"></i> Edit
-            </button>
+              <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
+                <button type="submit" name="delete_user" class="btn btn-sm btn-danger">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     <?php endforeach; ?>
   </div>
 </div>
-
-<!-- Modals -->
-<?php include('modals.php'); ?>
-<?php include('../includes/footer.php'); ?>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="scripts/user-management.js"></script>
 
