@@ -7,6 +7,7 @@ use api\models\ResponseType;
 require 'util/getProducts.php';
 require 'util/getProductCategories.php';
 require 'util/getPublicKey.php';
+require 'util/getRole.php';
 require 'util/loginApi.php';
 require 'util/logoutApi.php';
 require '../util/login.php';
@@ -59,6 +60,7 @@ function process_request(?string $request, ?string $data): void
             RequestType::GET_PUBLIC_KEY->name => getPublicKey($loginToken),
             RequestType::GET_PRODUCTS->name => getProducts($loginToken),
             RequestType::GET_PRODUCT_CATEGORIES->name => getProductCategories($loginToken),
+            RequestType::GET_ROLE->name => getRole($loginToken),
             default => (new JsonResponse(
                 RequestType::OTHER,
                 ResponseType::ERROR,

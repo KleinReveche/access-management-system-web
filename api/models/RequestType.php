@@ -12,6 +12,7 @@ enum RequestType: string
     case GET_PUBLIC_KEY = 'GET_PUBLIC_KEY';
     case GET_PRODUCTS = 'GET_PRODUCTS';
     case GET_PRODUCT_CATEGORIES = "GET_PRODUCT_CATEGORIES";
+    case GET_ROLE = "GET_ROLE";
 
     public static function fromName(mixed $requestType): RequestType
     {
@@ -23,6 +24,7 @@ enum RequestType: string
             self::GET_PUBLIC_KEY->name => self::GET_PUBLIC_KEY,
             self::GET_PRODUCTS->name => self::GET_PRODUCTS,
             self::GET_PRODUCT_CATEGORIES->name => self::GET_PRODUCT_CATEGORIES,
+            self::GET_ROLE->name => self::GET_ROLE,
             default => self::OTHER
         };
     }
