@@ -129,55 +129,53 @@ $categories = $stmt->fetchAll();
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     #product-category-page .category-card {
-      background: #ffffff;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border: 1px solid #e5e7eb;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    #product-category-page .category-card:hover {
+  background: linear-gradient(to bottom, #d0e1ff, #a8c4ff); /* Light blue gradient */
+  border: 1px solid #6b9bff; /* Soft blue border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#product-category-page .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 255, 0.2);
 }
 
 #product-category-page .category-card h4 {
-  color: var(--primary-color);
+  color: #003366; /* Dark blue for contrast */
   font-weight: bold;
 }
 
 #product-category-page .btn-primary {
-  background-color: #ff5733; /* New background color */
-  border-color: #ff5733;
+  background-color: #4a90e2; /* Medium blue */
+  border-color: #4a90e2;
 }
 
 #product-category-page .btn-primary:hover {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #357abd;
+  border-color: #357abd;
 }
 
 #product-category-page .btn-danger {
-  background-color: #c70039; /* New background color */
-  border-color: #c70039;
+  background-color: #d9534f;
+  border-color: #d9534f;
 }
 
 #product-category-page .btn-danger:hover {
-  background-color: #900c3f;
-  border-color: #900c3f;
+  background-color: #c9302c;
+  border-color: #c9302c;
 }
 
 #product-category-page .btn-secondary {
-  background-color: #900c3f; /* New background color */
-  border-color: #900c3f;
+  background-color: #5bc0de;
+  border-color: #5bc0de;
 }
 
 #product-category-page .btn-secondary:hover {
-  background-color: #581845;
-  border-color: #581845;
+  background-color: #31b0d5;
+  border-color: #31b0d5;
 }
 
 #product-category-page .modal-header {
-  background-color: #1a1a2e; /* New background color */
+  background-color: #003366; /* Deep blue */
   color: #ffffff;
 }
 
@@ -188,10 +186,11 @@ $categories = $stmt->fetchAll();
   transform: translate(-50%, -50%);
   z-index: 1055;
   border-radius: 8px;
-  background-color: #16213e; /* New background color */
+  background-color: #4a90e2;
   color: #ffffff;
   padding: 1rem;
 }
+
 #product-category-page .category-card:nth-child(1) {
   background-color: #ffcccb; /* Light Red */
 }
