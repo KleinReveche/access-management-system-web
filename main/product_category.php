@@ -147,37 +147,37 @@ $categories = $stmt->fetchAll();
 }
 
 #product-category-page .btn-primary {
-  background-color: #3498db; /* New background color */
-  border-color: #3498db;
+  background-color: #ff5733; /* New background color */
+  border-color: #ff5733;
 }
 
 #product-category-page .btn-primary:hover {
-  background-color: #2980b9;
-  border-color: #2980b9;
-}
-
-#product-category-page .btn-danger {
-  background-color: #e74c3c; /* New background color */
+  background-color: #e74c3c;
   border-color: #e74c3c;
 }
 
+#product-category-page .btn-danger {
+  background-color: #c70039; /* New background color */
+  border-color: #c70039;
+}
+
 #product-category-page .btn-danger:hover {
-  background-color: #c0392b;
-  border-color: #c0392b;
+  background-color: #900c3f;
+  border-color: #900c3f;
 }
 
 #product-category-page .btn-secondary {
-  background-color: #2ecc71; /* New background color */
-  border-color: #2ecc71;
+  background-color: #900c3f; /* New background color */
+  border-color: #900c3f;
 }
 
 #product-category-page .btn-secondary:hover {
-  background-color: #27ae60;
-  border-color: #27ae60;
+  background-color: #581845;
+  border-color: #581845;
 }
 
 #product-category-page .modal-header {
-  background-color: #34495e; /* New background color */
+  background-color: #1a1a2e; /* New background color */
   color: #ffffff;
 }
 
@@ -188,10 +188,11 @@ $categories = $stmt->fetchAll();
   transform: translate(-50%, -50%);
   z-index: 1055;
   border-radius: 8px;
-  background-color: #8e44ad; /* New background color */
+  background-color: #16213e; /* New background color */
   color: #ffffff;
   padding: 1rem;
 }
+
   </style>
 </head>
 <body>
