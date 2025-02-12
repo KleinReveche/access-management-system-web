@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-$base_url = 'https://accessmanagementsystem.online/index.php';
+$base_url = 'https://feature.accessmanagementsystem.online/index.php';
 date_default_timezone_set('Asia/Manila');
 
 // Include required files
