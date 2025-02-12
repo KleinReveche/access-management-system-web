@@ -192,6 +192,21 @@ $categories = $stmt->fetchAll();
   color: #ffffff;
   padding: 1rem;
 }
+#product-category-page .category-card:nth-child(1) {
+  background-color: #ffcccb; /* Light Red */
+}
+
+#product-category-page .category-card:nth-child(2) {
+  background-color: #d1e7dd; /* Light Green */
+}
+
+#product-category-page .category-card:nth-child(3) {
+  background-color: #cfe2ff; /* Light Blue */
+}
+
+#product-category-page .category-card:nth-child(4) {
+  background-color: #fff3cd; /* Light Yellow */
+}
 
   </style>
 </head>
