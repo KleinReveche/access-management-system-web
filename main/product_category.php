@@ -111,101 +111,75 @@ $categories = $stmt->fetchAll();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Scoped Styles -->
   <style>
-  #product-category-page {
-    #product-category-page 
-    --primary-color: #2C3E50; 
-    --secondary-color: #34495E; 
-    --accent-color: #5D6D7E;
-    --danger-color: #E74C3C; 
-    --bg-gradient-start: #ECF0F1; 
-    --bg-gradient-end: #FFFFFF;
-  }
-#product-category-page body {
-  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-  background-size: cover;
-  background-position: center;
-  padding: 20px 0;
-}
-
-
-#product-category-page .main-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
-}
-
-
-#product-category-page .category-card {
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-  border: 1px solid #ddd;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#product-category-page .category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-
-  #product-category-page .category-card h4 {
-    color: var(--primary-color);
-    font-weight: bold;
-  }
-
-  #product-category-page .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-  }
-
-  #product-category-page .btn-primary:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-  }
-
-  #product-category-page .btn-danger {
-    background-color: var(--danger-color);
-    border-color: var(--danger-color);
-  }
-
-  #product-category-page .btn-danger:hover {
-    background-color: #C0392B;
-    border-color: #C0392B;
-  }
-
-  #product-category-page .btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-  }
-
-  #product-category-page .btn-secondary:hover {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-  }
-
-  #product-category-page .modal-header {
-    background-color: var(--primary-color);
-    color: #ffffff;
-  }
-
-  #product-category-page .toast {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1055;
-    border-radius: 8px;
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    padding: 1rem;
-  }
-</style>
+    #product-category-page {
+      --primary-color: #1B263B;
+      --secondary-color: #415A77;
+      --accent-color: #778DA9;
+      --danger-color: #dc2626;
+    }
+    #product-category-page body {
+      background: #f3f4f6;
+    }
+    #product-category-page .main-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    #product-category-page .category-card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #product-category-page .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    #product-category-page .category-card h4 {
+      color: var(--primary-color);
+    }
+    #product-category-page .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    #product-category-page .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+    #product-category-page .btn-danger {
+      background-color: var(--danger-color);
+      border-color: var(--danger-color);
+    }
+    #product-category-page .btn-danger:hover {
+      background-color: #e53935;
+      border-color: #e53935;
+    }
+    #product-category-page .btn-secondary {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+    #product-category-page .btn-secondary:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+    #product-category-page .modal-header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+    #product-category-page .toast {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1055;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <div id="product-category-page">
