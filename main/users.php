@@ -202,62 +202,73 @@ ob_flush();
 <!-- Main Content Container -->
 <div class="container mt-5 users-main-container">
   <!-- Header -->
-  <header class="users-header">
+  <header class="users-header d-flex justify-content-between align-items-center">
     <h1 class="h4 mb-0">
       <i class="fas fa-user-cog me-2"></i>Manage Users
     </h1>
+    <div class="role-guide">
+      <span class="badge" style="background-color: rgba(1, 61, 83, 0.8);  color: white;">Admin</span>
+      <span class="badge" style="background-color: rgba(53, 94, 59, 0.9); color: white;">Cashier</span>
+      <span class="badge" style="background-color: rgba(160, 81, 45, 0.8);color: white;">Staff</span>
+    </div>
     <button class="btn btn-primary users-btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
       <i class="fas fa-plus"></i> Add User
     </button>
   </header>
 
-  <!-- Toast Message Container -->
+  <!-- Toast Messages -->
   <?php if (isset($success_message)) { ?>
-    <div class="toast users-toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          <?php echo $success_message; ?>
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
+    <div class="alert alert-success users-alert" role="alert">
+      <?php echo $success_message; ?>
     </div>
   <?php } ?>
   <?php if (isset($error_message)) { ?>
-    <div class="toast users-toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          <?php echo $error_message; ?>
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
+    <div class="alert alert-danger users-alert" role="alert">
+      <?php echo $error_message; ?>
     </div>
   <?php } ?>
 
   <!-- Users Grid -->
   <div class="row">
     <?php foreach ($users as $user): ?>
-      <div class="col-md-4 mb-4">
-        <div class="users-user-card">
-          <h4><?php echo htmlspecialchars($user['username']); ?></h4>
-          <p><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
-          <p><strong>Created By:</strong> <?php echo htmlspecialchars($user['created_by']); ?></p>
-          <p><strong>Created At:</strong>
-            <?php
-              $dt = new DateTime($user['created_at'], new DateTimeZone('UTC'));
-              $dt->setTimezone(new DateTimeZone('Asia/Manila'));
-              echo $dt->format('Y-m-d h:i:s A');
-            ?>
-          </p>
-          <div class="d-flex gap-2 mt-2">
-            <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
-              <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
-              <button type="submit" name="delete_user" class="btn btn-danger btn-sm users-btn-danger">
-                <i class="fas fa-trash"></i> Delete
+      <?php
+        $roleClass = '';
+        switch ($user['role']) {
+          case 'Admin':
+            $roleClass = 'style="background-color:rgba(1, 61, 83, 0.8); color: white;"';
+            break;
+          case 'Cashier':
+            $roleClass = 'style="background-color:rgba(53, 94, 59, 0.9); color: white;"';
+            break;
+          case 'Staff':
+            $roleClass = 'style="background-color:rgba(160, 81, 45, 0.8); color: white;"';
+            break;
+        }
+      ?>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card users-user-card" <?php echo $roleClass; ?>>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <?php echo htmlspecialchars($user['username']); ?> </h5>
+            <p class="card-text"><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
+            <p class="card-text"><strong>Created By:</strong> <?php echo htmlspecialchars($user['created_by']); ?></p>
+            <p class="card-text"><strong>Created At:</strong>
+              <?php
+                $dt = new DateTime($user['created_at'], new DateTimeZone('UTC'));
+                $dt->setTimezone(new DateTimeZone('Asia/Manila'));
+                echo $dt->format('Y-m-d h:i:s A');
+              ?>
+            </p>
+            <div class="d-flex justify-content-between mt-3">
+              <button class="btn btn-light btn-sm users-btn-edit" onclick="openEditModal('<?php echo htmlspecialchars($user['id']); ?>')">
+                <i class="fas fa-edit"></i> Edit
               </button>
-            </form>
-            <button class="btn btn-secondary btn-sm users-btn-secondary" onclick="openEditModal('<?php echo htmlspecialchars($user['id']); ?>')">
-              <i class="fas fa-edit"></i> Edit
-            </button>
+              <form method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                <input type="hidden" name="id" value="<?php echo htmlspecialchars($user['id']); ?>">
+                <button type="submit" name="delete_user" class="btn btn-danger btn-sm users-btn-delete">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -265,6 +276,8 @@ ob_flush();
   </div>
 </div>
 <!-- End of Main Content Container -->
+
+
 
 <!-- Modals -->
 

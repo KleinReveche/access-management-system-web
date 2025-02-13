@@ -60,7 +60,7 @@ $logs = $stmt_logs->fetchAll();
     border: 1px solid #e5e7eb;
   }
   #keys-page .card-header {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: #ffffff;
     padding: 15px;
     border-top-left-radius: 8px;
@@ -80,11 +80,11 @@ $logs = $stmt_logs->fetchAll();
   }
   /* Button Styling Using Theme Variables */
   #keys-page .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-color: var(--primary-color);
   }
   #keys-page .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     border-color: var(--secondary-color);
   }
   #keys-page .btn-secondary {

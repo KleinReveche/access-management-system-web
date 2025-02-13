@@ -1,6 +1,7 @@
 {
     "require": {
         "pusher/pusher-php-server": "^7.2",
-        "tecnickcom/tcpdf": "^6.8"
+        "tecnickcom/tcpdf": "^6.8",
+        "chillerlan/php-qrcode": "^5.0"
     }
 }
